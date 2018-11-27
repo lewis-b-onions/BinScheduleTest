@@ -27,4 +27,3 @@ urlpatterns = [
 
 # After instantiating the NoteResource(), we then set up what we want the URLs that start with api/ to redirect to the
 # resource.
-#add a test comment
