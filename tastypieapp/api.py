@@ -1,5 +1,5 @@
 from tastypie.resources import ModelResource
-from myapp.models import Entry
+from tastypieapp.models import Entry
 
 
 class EntryResource(ModelResource):
