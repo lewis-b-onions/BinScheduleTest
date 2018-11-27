@@ -15,3 +15,13 @@ class Note(models.Model):
         return '%s %s' % (self.title, self.body)
 
 # Now including the body field
+
+class BinSchedule(models.Model):
+    bintype = models.CharField(max_length=200)
+    date =  models.CharField(max_length=200)
+    council = models.CharField(max_length=200)
+
+
+    def __str__(self):
+        return '%s %s %s' % (self.bintype, self.date, self.council)
+

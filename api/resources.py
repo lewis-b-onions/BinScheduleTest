@@ -1,5 +1,5 @@
 from tastypie.resources import ModelResource
-from api.models import Note
+from api.models import Note, BinSchedule
 from tastypie.authorization import Authorization
 
 # Creating resource
@@ -18,3 +18,10 @@ class NoteResource(ModelResource):
 # This file contains the idea of resources used as a middle class that sites between our URLs and our models.
 # When a user makes a request to an endpoint. Depending on the URL, the user will be redirected to a particular resource,
 # which will then perform the appropriate CRUD action on the model
+
+
+class BinScheduleResource(ModelResource):
+    class Meta:
+        queryset = BinSchedule.objects.all()
+        resource_name = 'binschedule'
+        authorization = Authorization()

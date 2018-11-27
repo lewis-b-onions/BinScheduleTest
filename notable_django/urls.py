@@ -15,15 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api.resources import NoteResource
+from api.resources import NoteResource, BinScheduleResource
 from django.conf.urls import url, include
 
 note_resource = NoteResource()
+binschedule_resource= BinScheduleResource()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(note_resource.urls)),
+    url(r'^binschedule/', include(binschedule_resource.urls)),
 ]
 
 # After instantiating the NoteResource(), we then set up what we want the URLs that start with api/ to redirect to the
 # resource.
+
