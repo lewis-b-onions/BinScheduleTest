@@ -16,15 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from api.resources import NoteResource, BinScheduleResource
+from tastypieapp.api import EntryResource
 from django.conf.urls import url, include
 
 note_resource = NoteResource()
 binschedule_resource= BinScheduleResource()
+entry_resource = EntryResource()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/', include(note_resource.urls)),
+  #  url(r'^api/', include(note_resource.urls)),
     url(r'^binschedule/', include(binschedule_resource.urls)),
+    url(r'^blog/', include('tastypieapp.urls')),
+    url(r'^api/', include(entry_resource.urls))
 ]
 
 # After instantiating the NoteResource(), we then set up what we want the URLs that start with api/ to redirect to the
